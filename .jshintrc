@@ -128,36 +128,6 @@
       "Random": false,
       "_": false,               // Underscore.js
       "$": false,               // jQuery
-      "Router": false,           // iron-router
-      "moment": false,
-      "IonPopup": false,
-      "SimpleSchema": false,
-      "Roles": false,
-      "Chart": false,
-
-      // Time2L specific settings
-      "TimeEntries": false,
-      "Projects": false,
-      "Crews": false,
-      "time2l": false,
-      "UtilisationBase": false,
-      "UtilisationHoursChart": false,
-      "UtilisationHoursTimeSeriesChart": false,
-      "UtilisationDollarsChart": false,
-      "ActualVsPlannedHoursChart": false,
-      "ReportProjectMargin": false,
-      "Companies": false,
-      "GroupCompanies": false,
-      "Settings": false,
-      "News": false,
-      "Dashboard": false,
-      "Time2LUtilExporter": false,
-      "Time2LUtilPrinter": false,
-      "Report": false,
-      "Roles": false,
-      "ReportProjectFinancials": false,
-      "ReportMetaEmployee": false,
-      "ReportMetaTimeEntry": false,
-      "ReportMetaProject": false
+      "Router": false           // iron-router
     }
 }
