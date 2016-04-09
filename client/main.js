@@ -3,17 +3,6 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-// Template.hello.onCreated(function helloOnCreated () {
-//   // counter starts at 0
-//   startLocationTracking();
-// });
-
-// Template.hello.helpers({
-//   counter () {
-//     return Template.instance().counter.get();
-//   },
-// });
-
 Template.testButton.events({
   'click #test' (event, instance) {
     Meteor.call('search', 'fghjk', function (error, response) {
@@ -29,5 +18,22 @@ Template.settings.events({
     Meteor.call('updateDisplayName', $('#displayName').val(), function (error, response) {
       console.log(response);
     });
+
+    console.log($('#settingsTags').find('span'));
   },
+});
+
+Template.settingsTags.onRendered(function () {
+  var tags = Tags.find({ }).fetch();
+  console.log(tags);
+
+  // TODO: use tags from tags list
+  $('#settingsTags').tagsinput({
+    typeaheadjs: {
+    name: 'tagnames',
+    displayKey: 'name',
+    valueKey: '_id',
+    source: tags
+    }
+  });
 });

@@ -2,8 +2,8 @@ accounts-base@1.2.5
 accounts-password@1.1.7
 accounts-ui@1.1.8
 accounts-ui-unstyled@1.1.11
+ajduke:bootstrap-tagsinput@0.7.0
 allow-deny@1.0.3
-autopublish@1.0.6
 autoupdate@1.2.7
 babel-compiler@6.6.1
 babel-runtime@0.1.7
@@ -58,12 +58,14 @@ meteor-base@1.0.3
 minifier-css@1.1.10
 minifier-js@1.1.10
 minimongo@1.0.13
+mizzao:bootstrap-3@3.3.1_1
 mobile-experience@1.0.3
 mobile-status-bar@1.0.11
 modules@0.5.2
 modules-runtime@0.6.2
 mongo@1.1.6
 mongo-id@1.0.3
+mrt:bootstrap3-typeahead@3.0.3
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.42
 observe-sequence@1.0.10

@@ -12,12 +12,23 @@
 </body>
 
 <template name="testButton">
-  <button id="test" type="submit">Login</button>
+  <button id="test" type="submit">Debug</button>
 </template>
 
 <template name="settings">
 	<form id="settings-form" class="settings-form">
-        <input id="displayName" type="text" name="displayName" placeholder="Display Name" />
-        <button class="saveSettings" id="saveSettings" type="submit">Save</button>
+    {{> settingsDisplayName}}
+    <br />
+    {{> settingsTags}}
+    <br />
+    <button class="saveSettings" id="saveSettings" type="submit">Save</button>
 	</form>
+</template>
+
+<template name="settingsDisplayName">
+  <input id="displayName" type="text" name="displayName" placeholder="Display Name" />
+</template>
+
+<template name="settingsTags">
+  <input id="settingsTags" type="text" data-role="tagsinput" />
 </template>
