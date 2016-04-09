@@ -1,13 +1,27 @@
 var _updateGpsLocation = function () {
 	console.log('updating gps location ...');
 
-	var location = Geolocation.latLng();
-	if (this.userId && location && location.lat && location.lng) {
-		Meteor.call(
-			'updatePosition',
-			location.lat,
-			location.lng
-		);
+	if (Meteor.user()) {
+		var location = Geolocation.latLng();
+
+		if (location && location.lat && location.lng) {
+			Meteor.call(
+				'updatePosition',
+				location.lat,
+				location.lng,
+				function (error, response) {
+					if (error) {
+						console.log(error);
+					}
+				}
+			);
+		}
+		else {
+			console.log("can't get any gps position");
+		}
+	}
+	else {
+		console.log('user not logged in');
 	}
 };
 
