@@ -1,14 +1,144 @@
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+        html, body {
+            height: 100%;
+        }
+        footer {
+            color: #666;
+            background: #222;
+            padding: 17px 0 0 0;
+            border-top: 1px solid #000;
+        }
+        footer a {
+            color: #999;
+        }
+        footer a:hover {
+            color: #efefef;
+        }
+        header {
+          background: silver;
+        }
+        .wrapper {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -63px  ;
+        }
+        .push {
+            height: 63px;
+        }
+        /* not required for sticky footer; just pushes hero down a bit */
+        .wrapper > .container {
+            padding-top: 0px;
+        }
+        .container {
+          margin: 0px;
+          padding: 0px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container" style="text-align: center;">{{> loginButtons}}</div>
+    </header>
+    <div class="wrapper">
+      <div class="container">
+        <div class="common_table">
+          <div class="common_table" style="border-radius: 10px;">
+            <div>HAVES</div>
+            <div style="margin: 5px;">{{> settingsHaves}}</div>
+          </div>
+          <div class="common_table" style="background-color:  border-radius: 10px;">
+            <div>WANTS</div>
+            <div style="margin: 5px;">{{> settingsHaves}}</div>
+          </div>
+          <div class="common_table">
+            <div></div>
+            <div style="text-align: right;">{{> searchButton}}</div>
+          </div>
+          <br />
+          <div class="common_table" style="border-radius: 10px;">
+            <div>Kostas</div>
+            <div style="margin: 5px; text-align: right;"><button width="15" height="15"><img width="15" height="15" src="letterRequest.png"/></button></div>
+          </div>
+          <div class="common_table">
+            <div>Anna</div>
+            <div style="margin: 5px; text-align: right;"><button width="15" height="15"><img width="15" height="15" src="letterRequest.png"/></button></div>
+          </div>
+          <div class="common_table">
+            <div>Anna</div>
+            <div style="margin: 5px; text-align: right;"><button width="15" height="15"><img width="15" height="15" src="letterRequest.png"/></button></div>
+          </div>
+          {{> searchResults}}
+          {{> settingsDisplayName}}
+        </div>
+<!-- 
+        <div class="row">
+          <label>HAVES:</label>
+          {{> settingsHaves}}
+        </div>
+        <div class="row">
+          <label>WANTS:</label>
+          {{> settingsWants}}
+        </div> -->
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        done with meteor
+      </div>
+    </footer>
+  </body>
+
+<template name="searchButton">
+  <button id="searchButton" type="submit">Search</button>
+</template>
+
+<template name="settingsHaves">
+  <input id="settingsHaves" type="text" data-role="tagsinput" />
+</template>
+
+<template name="settingsWants">
+  <div>
+    <input id="settingsWants" type="text" data-role="tagsinput" />
+  </div>
+</template>
+
+<template name="searchResults">
+  {{#each SessionSearchResults}}
+    {{>searchResultItem}}
+  {{/each}}
+</template>
+
+<template name="searchResultItem">
+  <div class="common_table">
+    <div>{{displayName}}</div>
+    <div style="margin: 5px; text-align: right;"><button width="15" height="15"><img width="15" height="15" src="letter.png"/></button></div>
+  </div>  
+</template>
+
+<template name="settingsDisplayName">
+  <input id="displayName" type="text" name="displayName" placeholder="Display Name" />
+</template>
+
+<!-- <head>
   <title>Ice Breaker</title>
 </head>
 <body>
-  <h1>Welcome to Ice Breaker!</h1>
+  <div class="common_table">
+    <div id="header">
+      <div>
+        <h1>Welcome to Ice Breaker!</h1>
+        {{> loginButtons}}
+      </div>
+    </div>
+    <div id="content"><div>
+      {{> settings}}
+    </div></div>
+    <div id="footer"><div>Footer ... </div></div>
+  </div>
 
-  {{> loginButtons}}
-  {{> testButton}}
-
-  <br />
-  {{> settings}}
 </body>
 
 <template name="testButton">
@@ -31,4 +161,4 @@
 
 <template name="settingsTags">
   <input id="settingsTags" type="text" data-role="tagsinput" />
-</template>
+</template> -->

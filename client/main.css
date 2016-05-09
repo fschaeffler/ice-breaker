@@ -1,1 +1,18 @@
-/* CSS declarations go here */
+.common_table {
+    display: table;
+    border-collapse: collapse;
+    border: 0px solid grey;
+    width: 100%
+}
+.common_table div {
+    display: table-row;
+    border: 1px solid grey;
+    width: 100%
+}
+.common_table div div {
+    display: table-cell;
+}
+
+.common_table .content div {
+	height: 100%;
+}

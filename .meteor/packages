@@ -18,7 +18,7 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 insecure                # Allow all DB writes from clients (for prototyping)
-iron:router
+# iron:router
 mdg:geolocation
 accounts-password
 twbs:bootstrap
@@ -28,3 +28,6 @@ ajduke:bootstrap-tagsinput
 mizzao:bootstrap-3
 mrt:bootstrap3-typeahead
 ejson
+semantic:ui
+flemay:less-autoprefixer
+session

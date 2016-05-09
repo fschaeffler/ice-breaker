@@ -48,13 +48,47 @@ Meteor.methods({
             throw new Meteor.Error('not-authorized');
         }
     },
-    search: function (query) {
+    updateHaves: function (haves) {
+        if (this.userId) {
+            Meteor.users.update(
+                { _id: this.userId },
+                { $set :
+                    { 'haves': haves }
+                }
+            );
+
+            var logMessage = sprintf(
+                'user %s updated its haves to %s',
+                getUserEmail,
+                displayName
+            );
+
+            console.log(logMessage);
+        }
+        else {
+            console.log('user not-authorized');
+            throw new Meteor.Error('not-authorized');
+        }
+    },
+    search: function (wants) {
         var result = [];
 
         Meteor.users.find({ }).fetch().forEach(function (user) {
-            result.push({_id: user._id, name: user.displayName});
+            result.push({_id: user._id, displayName: user.displayName});
         });
 
         return result;
+    },
+    requestConversation: function (recieverUserId) {
+        Requests.insert({sender: this.userId, receiver: recieverUserId});
+
+        var logMessage = sprintf('User ID %s sent a conversation request to %s', this.userId, recieverUserId);
+        console.log(logMessage);
+    },
+    sendMessage: function (recieverUserId, message) {
+        Chats.insert({sender: this.userId, receiver: recieverUserId, message: message});
+
+        var logMessage = sprintf('User ID %s sent the message %s to %s', this.userId, message, recieverUserId);
+        console.log(logMessage);
     }
 });
